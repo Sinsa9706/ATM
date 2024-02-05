@@ -11,9 +11,6 @@ public class ButtonManager : MonoBehaviour
     public Text inputText;
     public GameObject panel;
 
-    public int currCash;
-    public int currBalance;
-
     public void DepositButton()
     {
         SceneManager.LoadScene("DepositScene");
@@ -36,14 +33,14 @@ public class ButtonManager : MonoBehaviour
 
     public void DepositWithBtn(int number)
     {
-        currCash = int.Parse(cash.text);
-        currBalance = int.Parse(balance.text);
-        if (currCash - number >= 0)
+        GameManager.instance.currCash = int.Parse(cash.text);
+        GameManager.instance.currBalance = int.Parse(balance.text);
+        if (GameManager.instance.currCash - number >= 0)
         {
-            currBalance += number;
-            currCash -= number;
-            balance.text = currBalance.ToString();
-            cash.text = currCash.ToString();
+            GameManager.instance.currBalance += number;
+            GameManager.instance.currCash -= number;
+            balance.text = GameManager.instance.currBalance.ToString();
+            cash.text = GameManager.instance.currCash.ToString();
         }
         else
         {
@@ -53,14 +50,14 @@ public class ButtonManager : MonoBehaviour
 
     public void DepositWithUsrTxt()
     {
-        currCash = int.Parse(cash.text);
-        currBalance = int.Parse(balance.text);
-        if (currCash - int.Parse(inputText.text) >= 0)
+        GameManager.instance.currCash = int.Parse(cash.text);
+        GameManager.instance.currBalance = int.Parse(balance.text);
+        if (GameManager.instance.currCash - int.Parse(inputText.text) >= 0)
         {
-            currBalance += int.Parse(inputText.text);
-            currCash -= int.Parse(inputText.text);
-            balance.text = currBalance.ToString();
-            cash.text = currCash.ToString();
+            GameManager.instance.currBalance += int.Parse(inputText.text);
+            GameManager.instance.currCash -= int.Parse(inputText.text);
+            balance.text = GameManager.instance.currBalance.ToString();
+            cash.text = GameManager.instance.currCash.ToString();
         }
         else
         {
@@ -71,14 +68,14 @@ public class ButtonManager : MonoBehaviour
 
     public void WithdrawWithBtn(int number)
     {
-        currCash = int.Parse(cash.text);
-        currBalance = int.Parse(balance.text);
-        if (currBalance - number >= 0)
+        GameManager.instance.currCash = int.Parse(cash.text);
+        GameManager.instance.currBalance = int.Parse(balance.text);
+        if (GameManager.instance.currBalance - number >= 0)
         {
-            currCash += number;
-            currBalance -= number;
-            balance.text = currBalance.ToString();
-            cash.text = currCash.ToString();
+            GameManager.instance.currCash += number;
+            GameManager.instance.currBalance -= number;
+            balance.text = GameManager.instance.currBalance.ToString();
+            cash.text = GameManager.instance.currCash.ToString();
         }
         else
         {
@@ -88,14 +85,14 @@ public class ButtonManager : MonoBehaviour
 
     public void WithdrawWithUsrTxt()
     {
-        currCash = int.Parse(cash.text);
-        currBalance = int.Parse(balance.text);
-        if (currBalance - int.Parse(inputText.text) >= 0)
+        GameManager.instance.currCash = int.Parse(cash.text);
+        GameManager.instance.currBalance = int.Parse(balance.text);
+        if (GameManager.instance.currBalance - int.Parse(inputText.text) >= 0)
         {
-            currCash += int.Parse(inputText.text);
-            currBalance -= int.Parse(inputText.text);
-            balance.text = currBalance.ToString();
-            cash.text = currCash.ToString();
+            GameManager.instance.currCash += int.Parse(inputText.text);
+            GameManager.instance.currBalance -= int.Parse(inputText.text);
+            balance.text = GameManager.instance.currBalance.ToString();
+            cash.text = GameManager.instance.currCash.ToString();
         }
         else
         {
