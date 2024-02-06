@@ -8,23 +8,21 @@ ATM 기능 구현
 필수 구현 사항
 메인, 입금, 출금 모두 구현
 
-1) 메인, 입금, 출금 공통 사항
-  1. 각 씬의 잔고 통일
-     GameManager Singleton을 통해 구현
-     RefreshMoney를 통해 값이 변할때 마다 각 씬의 텍스트 업데이트
+1. 각 씬의 잔고 통일 : 
+GameManager Singleton을 통해 구현
+RefreshMoney를 통해 값이 변할때 마다 각 씬의 텍스트 업데이트
 
-  2. 각 씬의 버튼 기능
-     ButtonManager를 통해 관리하여 구현
-   
-2) 입금, 출금 공통 사항
-   잔액 부족 팝업
-   잔고가 입력 값보다 부족할 경우에만 활성화 되도록 구현
+2. 각 씬의 버튼 기능 : 
+ButtonManager를 통해 관리하여 구현
+
+3. 잔액 부족 팝업 : 
+잔고가 입력 값보다 부족할 경우에만 활성화 되도록 구현
    
 선택 구현 사항
-1. 1000단위마다 , 표시
-   String.Format 을 통해 구현
+1. 1000단위마다 , 표시 : 
+String.Format 을 통해 구현
 
-2. InputField 숫자 이외 값 입력 불가
-   InputField 자체 기능을 통해 구현
+2. InputField 숫자 이외 값 입력 불가 : 
+InputField 자체 기능을 통해 구현
 
 3. 로그인 (구현중)
