@@ -33,14 +33,11 @@ public class ButtonManager : MonoBehaviour
 
     public void DepositWithBtn(int number)
     {
-        GameManager.instance.currCash = int.Parse(cash.text);
-        GameManager.instance.currBalance = int.Parse(balance.text);
-        if (GameManager.instance.currCash - number >= 0)
+        bool check = GameManager.instance.Deposit(number);
+        if (check)
         {
-            GameManager.instance.currBalance += number;
-            GameManager.instance.currCash -= number;
-            balance.text = GameManager.instance.currBalance.ToString();
-            cash.text = GameManager.instance.currCash.ToString();
+            balance.text = string.Format("{0: #,###;;0}", GameManager.instance.currBalance);
+            cash.text = string.Format("{0: #,###;;0}", GameManager.instance.currCash);
         }
         else
         {
@@ -50,14 +47,12 @@ public class ButtonManager : MonoBehaviour
 
     public void DepositWithUsrTxt()
     {
-        GameManager.instance.currCash = int.Parse(cash.text);
-        GameManager.instance.currBalance = int.Parse(balance.text);
-        if (GameManager.instance.currCash - int.Parse(inputText.text) >= 0)
+        int number = int.Parse(inputText.text);
+        bool check = GameManager.instance.Deposit(number);
+        if (check)
         {
-            GameManager.instance.currBalance += int.Parse(inputText.text);
-            GameManager.instance.currCash -= int.Parse(inputText.text);
-            balance.text = GameManager.instance.currBalance.ToString();
-            cash.text = GameManager.instance.currCash.ToString();
+            balance.text = string.Format("{0: #,###;;0}", GameManager.instance.currBalance);
+            cash.text = string.Format("{0: #,###;;0}", GameManager.instance.currCash);
         }
         else
         {
@@ -68,14 +63,11 @@ public class ButtonManager : MonoBehaviour
 
     public void WithdrawWithBtn(int number)
     {
-        GameManager.instance.currCash = int.Parse(cash.text);
-        GameManager.instance.currBalance = int.Parse(balance.text);
-        if (GameManager.instance.currBalance - number >= 0)
+        bool check = GameManager.instance.Withdraw(number);
+        if (check)
         {
-            GameManager.instance.currCash += number;
-            GameManager.instance.currBalance -= number;
-            balance.text = GameManager.instance.currBalance.ToString();
-            cash.text = GameManager.instance.currCash.ToString();
+            balance.text = string.Format("{0: #,###;;0}", GameManager.instance.currBalance);
+            cash.text = string.Format("{0: #,###;;0}", GameManager.instance.currCash);
         }
         else
         {
@@ -85,14 +77,12 @@ public class ButtonManager : MonoBehaviour
 
     public void WithdrawWithUsrTxt()
     {
-        GameManager.instance.currCash = int.Parse(cash.text);
-        GameManager.instance.currBalance = int.Parse(balance.text);
-        if (GameManager.instance.currBalance - int.Parse(inputText.text) >= 0)
+        int number = int.Parse(inputText.text);
+        bool check = GameManager.instance.Withdraw(number);
+        if (check)
         {
-            GameManager.instance.currCash += int.Parse(inputText.text);
-            GameManager.instance.currBalance -= int.Parse(inputText.text);
-            balance.text = GameManager.instance.currBalance.ToString();
-            cash.text = GameManager.instance.currCash.ToString();
+            balance.text = string.Format("{0: #,###;;0}", GameManager.instance.currBalance);
+            cash.text = string.Format("{0: #,###;;0}", GameManager.instance.currCash);
         }
         else
         {

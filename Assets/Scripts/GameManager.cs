@@ -25,4 +25,31 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public bool Deposit(int value)
+    {
+        if(currCash - value >= 0)
+        {
+            currCash -= value;
+            currBalance += value;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public bool Withdraw(int value)
+    {
+        if (currBalance - value >= 0)
+        {
+            currCash += value;
+            currBalance -= value;
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }

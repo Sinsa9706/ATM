@@ -15,7 +15,7 @@ public class RefreshMoneyText : MonoBehaviour
 
     public void RefreshMoney()
     {
-        cash.text = GameManager.instance.currCash.ToString();
-        balance.text = GameManager.instance.currBalance.ToString();
+        cash.text = string.Format("{0: #,###;;0}", GameManager.instance.currCash);
+        balance.text = string.Format("{0: #,###;;0}", GameManager.instance.currBalance);
     }
 }
