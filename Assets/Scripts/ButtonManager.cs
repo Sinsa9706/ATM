@@ -26,6 +26,11 @@ public class ButtonManager : MonoBehaviour
         SceneManager.LoadScene("MainScene");
     }
 
+    public void LoginButton()
+    {
+        SceneManager.LoadScene("MainScene");
+    }
+
     public void ClosePanel()
     {
         panel.SetActive(false);

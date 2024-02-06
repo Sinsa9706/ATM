@@ -8,12 +8,15 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
 
+    public Text userName;
+
     public int currCash;
     public int currBalance;
+    private bool IsSave;
 
     private void Awake()
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
@@ -27,7 +30,7 @@ public class GameManager : MonoBehaviour
 
     public bool Deposit(int value)
     {
-        if(currCash - value >= 0)
+        if (currCash - value >= 0)
         {
             currCash -= value;
             currBalance += value;
@@ -52,4 +55,5 @@ public class GameManager : MonoBehaviour
             return false;
         }
     }
+
 }
