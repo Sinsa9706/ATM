@@ -95,4 +95,7 @@ public class ButtonManager : MonoBehaviour
         }
         inputText.text = "";
     }
+
+    // 인풋 필드에 숫자가 아닐 경우, 입력 제한
+    // bool값 사용
 }
